@@ -3,12 +3,15 @@
 import Todo from "@/components/Todos/Todo";
 import { ITodo } from "@/interface/interface";
 import { getDataLocalStorage, setDataLocalStorage } from "@/utils/localStorage";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [todo, setTodo] = useState<ITodo[]>(getDataLocalStorage("todo") || []);
+  const [todo, setTodo] = useState<ITodo[]>([]);
   const [name, setName] = useState<string>("");
 
+  useEffect(() => {
+    setTodo(getDataLocalStorage("todo"));
+  }, []);
   console.log(todo, "todo");
 
   const addTodo = () => {
