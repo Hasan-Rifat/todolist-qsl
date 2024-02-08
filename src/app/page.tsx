@@ -54,7 +54,7 @@ export default function Home() {
                 type="text"
                 value={name}
                 placeholder="Add Todo"
-                className="text-black w-full lg:w-auto px-5 py-2 rounded-lg border-2 border-gray-300 focus:outline-none focus:border-cyan-500"
+                className="text-black w-full lg:w-auto px-5 py-2 rounded-lg border-2 border-gray-300 focus:outline-none focus:border-cyan-500 lg:col-span-3"
                 onChange={(e) => setName(e.target.value)}
               />
               <button
