@@ -12,7 +12,6 @@ export default function Home() {
   useEffect(() => {
     setTodo(getDataLocalStorage("todo"));
   }, []);
-  console.log(todo, "todo");
 
   const addTodo = () => {
     const newTodo = {
@@ -50,21 +49,22 @@ export default function Home() {
             <h2 className="text-2xl text-black text-center my-5 font-semibold">
               Do it Now
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-5">
+            <div className="grid grid-cols-1 lg:grid-cols-4 gap-5">
               <input
                 type="text"
                 value={name}
                 placeholder="Add Todo"
-                className="text-black col-span-3 w-full px-5 py-2 rounded-lg border-2 border-gray-300 focus:outline-none focus:border-cyan-500"
+                className="text-black w-full lg:w-auto px-5 py-2 rounded-lg border-2 border-gray-300 focus:outline-none focus:border-cyan-500"
                 onChange={(e) => setName(e.target.value)}
               />
               <button
-                className="bg-gradient-to-r from-cyan-500 to-blue-500 px-5  rounded-lg text-white col-span-1"
+                className="bg-gradient-to-r from-cyan-500 to-blue-500 px-5 rounded-lg text-white"
                 onClick={addTodo}
               >
                 Add Todo
               </button>
             </div>
+
             {/* all todo */}
             {todo.map((item) => (
               <div key={item.id}>
